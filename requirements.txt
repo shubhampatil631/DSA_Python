@@ -1,0 +1,4 @@
+# Core Python utilities
+requests
+python-dotenv
+tqdm
