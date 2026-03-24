@@ -1,3 +1,4 @@
+#DSA Day-1
 num=[1,1,1,3,3,4,3,2,4,2]
 if len(set(num)) == len(num):
     print("No duplicate values")
