@@ -1,0 +1,13 @@
+Find the Missing Number in a Range
+
+This code finds the single missing number in the range from 0 to the length of the list, provided as an array.
+
+The code works by:
+1. Calculating the sum of a range from 0 to the total number of elements in the array (range(len(nums) + 1)).
+2. Calculating the sum of the original array (nums).
+3. The difference between these two sums is the missing number in the sequence.
+4. Returning that missing number.
+5. This is a very efficient O(n) solution that uses the sum of the elements for comparison.
+
+Why this logic is used:
+The mathematical sum of a sequence from 0 to n is a constant value. By comparing this "expected" sum with the "actual" sum of the list, the difference must be the missing number. This avoids nested searches or extra memory.

@@ -1,0 +1,14 @@
+LeetCode 1266: Minimum Time Visiting All Points
+
+This code calculates the minimum time to visit all points in a given order.
+Since you can move diagonally, horizontally, or vertically, the time to move between two points is the maximum of the horizontal distance and vertical distance: max(|x2-x1|, |y2-y1|).
+
+The code works by:
+1. Popping the last point from the list to use as the starting position.
+2. Using a while loop to pop the next points one by one.
+3. Calculating the Chebyshev distance (max of horizontal and vertical diff) to each next point.
+4. Adding this distance to the total result (res).
+5. Updating the current position and repeating until no points remain.
+
+Why this logic is used:
+Diagonal moves cover both horizontal and vertical distances at once. The total time depends only on the larger of the two distances, as the smaller distance is handled simultaneously during the diagonal steps.

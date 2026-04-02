@@ -1,0 +1,15 @@
+Two Sum Problem
+
+This code finds the indices of two numbers in an array that add up to a target value.
+
+The code works by:
+1. Creating an empty dictionary called hasMap to store values and their indices.
+2. Iterating through the array using enumerate(nums) to get both the index and the value.
+3. Calculating the difference (diff) needed to reach the target: target - current value.
+4. Checking if the 'diff' already exists in hasMap.
+5. If it does, returning the index of the stored value and the current index as a list.
+6. If it does not, storing the current value and its index in hasMap for future checks.
+7. This approach is highly efficient because it only passes through the array once (O(n) time complexity).
+
+Why this logic is used:
+Using a hash map (dictionary) avoids a nested for-loop. By storing each number's index as we go, we can check for its "complement" (target - current) in constant time. This reduces the time complexity from O(n²) to O(n).

@@ -1,0 +1,16 @@
+Find and Print Duplicates in an Array
+
+This code checks for duplicate values in an array (num) and prints them out.
+
+The code works by:
+1. Converting the list into a set and comparing its length to that of the original list.
+2. If the lengths are the same, there are no duplicates.
+3. If they differ, the code:
+   a. Prints all unique values in the list.
+   b. Creates a 'seen' set to track processed numbers.
+   c. Uses a list comprehension to build a list of duplicates (numbers that have already been 'seen').
+   d. Prints the list of duplicate values.
+4. This identifies all elements that appear more than once in the input array.
+
+Why this logic is used:
+Sets are a data structure that cannot contain duplicate values. Comparing the length of a set vs the original list is the most efficient (O(n)) way to tell if duplicates were removed or are present in the data.

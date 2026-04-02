@@ -1,0 +1,14 @@
+How Many Numbers Are Smaller Than the Current Number
+
+This code calculates for each number in the input list (nums), how many numbers in the list are smaller than it.
+
+The code works by:
+1. Creating a sorted copy of the input list (temp).
+2. Creating an empty dictionary (d) to store each number and its first index in the sorted list.
+3. For each number in the sorted list, if it's not already in the dictionary, storing its index. 
+4. The index in the sorted list is equal to the count of elements smaller than that number.
+5. Iterating through the original list and using the dictionary to look up the count of smaller elements.
+6. Returning the final list of counts.
+
+Why this logic is used:
+Sorting the array automatically places each element at an index representing the number of items that are smaller than it. By storing only the first occurrence in a dictionary, we guarantee that the final count reflects the number of *distinctly* smaller items efficiently in O(n log n) time.

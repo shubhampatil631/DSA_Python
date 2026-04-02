@@ -1,0 +1,13 @@
+First Missing Positive Integer
+
+This code finds the smallest positive integer (greater than 0) that is missing from an array of integers.
+
+The code works by:
+1. Converting the input array into a set called 's1' for constant-time lookup.
+2. Iterating through a range from 1 up to the total number of elements in the array plus 2.
+3. Checking if each number in the range is present in the set 's1'.
+4. Returning the first number that is NOT in the set 's1'.
+5. This fulfills the problem requirement of finding the first positive number (1, 2, 3...) that doesn't appear in the list.
+
+Why this logic is used:
+A set lookup is extremely efficient, allowing the algorithm to search for missing gaps in the sequence without nested loops. Iterating through the whole length of the original list starting from 1 guarantees we find the very first gap.

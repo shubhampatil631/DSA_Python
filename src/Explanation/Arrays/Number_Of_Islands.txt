@@ -1,0 +1,17 @@
+Number of Islands (LeetCode 200)
+
+This problem asks us to count the number of islands in a 2D grid. An island is surrounded by water ('0') and is formed by connecting adjacent lands ('1') horizontally or vertically.
+
+The solution uses Depth-First Search (DFS) to traverse each island:
+1. Iterate through every cell in the grid.
+2. When a '1' (land) is found, it marks the start of a new island. Increment the counter.
+3. Use DFS to "sink" the entire island by recursively visiting all connected '1's and changing them to '0's (water). This prevents the same island from being counted again.
+4. Continue the process until all cells are visited.
+
+Why this logic works:
+- By sinking the island (marking visited cells as '0'), we eliminate the need for a separate "visited" set, saving memory.
+- DFS ensures that all parts of a single island are processed completely before we look for the next one.
+- The boundary checks (out of bounds or hitting water) ensure the recursion safe and stops correctly.
+
+Time Complexity: O(M * N), where M is the number of rows and N is the number of columns, as we visit each cell once.
+Space Complexity: O(M * N) in the worst case for the recursion stack (if the entire grid is one island).

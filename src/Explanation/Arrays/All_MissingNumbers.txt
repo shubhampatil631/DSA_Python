@@ -1,0 +1,14 @@
+Find All Disappeared Numbers in an Array
+
+This code identifies all the integers in the range [1, n] that do not appear in the input array (nums), where n is the length of the array.
+
+The code works by:
+1. Converting the input list into a set called 's1' for O(1) average lookup time.
+2. Iterating through a range from 1 to the length of the original list plus one.
+3. Checking if each number in the range is present in the set 's1'.
+4. If a number is not in the set, it is added to the 'ret' list.
+5. Returning the list of missing numbers.
+6. This method ensures that we find integers that are "missing" from the [1, n] sequence.
+
+Why this logic is used:
+Converting the input list into a set allows for constant-time (O(1)) checking if a number is present. Without a set, searching for each number would take O(n) for each check, making the whole algorithm O(n²).

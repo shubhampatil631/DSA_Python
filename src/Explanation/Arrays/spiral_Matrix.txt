@@ -1,0 +1,20 @@
+Spiral Matrix (LeetCode 54)
+
+The goal is to return all elements of a 2D matrix in spiral order.
+
+This solution uses a clever "pop" approach:
+1. While the matrix exists (is not empty):
+   - Pop and add the top row to the result (matrix.pop(0)).
+   - For all remaining rows, pop and add their last (rightmost) element to the result.
+   - Pop and add the bottom row (reversed) to the result (matrix.pop()[::-1]).
+   - For all remaining rows in reverse, pop and add their first (leftmost) element to the result.
+2. Repeat until no elements are left in the matrix.
+
+Why this logic works:
+- At each step, one part of the spiral (top, right, bottom, left) is extracted and added to the result.
+- The matrix decreases in size as elements are "peeled off" one by one.
+- The `if matrix and matrix[0]` checks ensure that we don't attempt to pop from an empty matrix or a null row.
+
+Time Complexity: O(M * N), where M and N are the matrix dimensions, as we visit each element once.
+Space Complexity: O(1) beyond the result storage, since the work is done in-place by popping from the matrix.
+NOTE: This approach modifies the input matrix. If you need to keep the original matrix, you should create a copy first.

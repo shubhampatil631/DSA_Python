@@ -1,0 +1,17 @@
+Three Sum Problem
+
+This code finds all unique triplets in an array that sum up to a target value.
+
+The code works by:
+1. Sorting the input array (crucial for the two-pointer approach).
+2. Iterating through the array to pick the first element of the triplet.
+3. Skipping duplicate values for the first element to avoid redundant calculations.
+4. Setting up two pointers: 'low' (after the first element) and 'high' (at the end of the array).
+5. While 'low' is less than 'high', calculating the total sum of the three elements.
+6. If total == target, adding the triplet to the results and skipping duplicates for 'low' and 'high'.
+7. If total < target, moving the 'low' pointer forward to increase the sum.
+8. If total > target, moving the 'high' pointer backward to decrease the sum.
+9. Finally, returning the list of unique triplets.
+
+Why this logic is used:
+Sorting the array and using two pointers (low/high) allows us to explore potential combinations in O(n²) time instead of O(n³) with nested loops. It also makes it simple to move past duplicate numbers to ensure each triplet in the result is unique.
