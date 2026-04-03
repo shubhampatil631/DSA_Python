@@ -1,0 +1,23 @@
+Best Time to Buy and Sell Stock (LeetCode 121)
+
+This problem asks us to find the maximum profit we can achieve by buying and selling a stock on different days.
+
+The solution uses a Two-Pointer / Sliding Window technique:
+1. Initialize two pointers: 'l' (left) representing the buy day and 'r' (right) representing the sell day.
+2. Initially, l = 0 and r = 1.
+3. While the right pointer 'r' is within the bounds of the prices list:
+   - If the price at 'l' is less than the price at 'r' (profitable transaction):
+     - Calculate the current profit: price[r] - price[l].
+     - Update maxProfit if the current profit is higher.
+   - Else (if price[l] >= price[r]):
+     - This means we found a lower price to buy at. Move the left pointer 'l' to 'r'.
+   - Always increment 'r' to explore the next day.
+4. Return the maximum profit found.
+
+Why this logic works:
+- We only care about buying low and selling high.
+- If we find a price lower than our current buy price (prices[r] < prices[l]), we should update our buy day to that lower price to potentially increase future profits.
+- We don't need a nested loop because we only need to pass through the array once.
+
+Time Complexity: O(N), where N is the number of days, as we traverse the list exactly once.
+Space Complexity: O(1), as we only use a few variables for pointers and storing the maximum profit.
