@@ -1,0 +1,16 @@
+Contains Duplicate II
+
+This code determines if there are two distinct indices i and j in an array such that nums[i] == nums[j] and the absolute difference between i and j is at most k.
+
+The code works by:
+1. Initializing an empty set called 'seen' to keep track of the numbers in the current sliding window.
+2. Iterating through the array 'nums' using its index 'i'.
+3. Checking if the current number nums[i] is already in the 'seen' set.
+4. If it is, returning True because a duplicate within distance k has been found.
+5. If not, adding the current number to the 'seen' set.
+6. Checking if the current index 'i' has reached or exceeded 'k'.
+7. If it has, removing the element at index 'i - k' from the set. This maintains the sliding window of size k.
+8. Returning False if the loop finishes without finding any such duplicates.
+
+Why this logic is used:
+Using a sliding window with a hash set allows us to solve the problem in O(n) time. The set provides constant time O(1) lookups and removals. By limiting the set's size to k, we ensure that any match found is within the required index distance, avoiding the O(n * k) complexity of a naive nested loop approach.

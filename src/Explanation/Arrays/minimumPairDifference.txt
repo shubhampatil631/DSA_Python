@@ -1,0 +1,16 @@
+Minimum Pair Difference
+
+This code finds all pairs of elements in an array that have the minimum absolute difference between them.
+
+The code works by:
+1. Sorting the input array 'nums' in ascending order. This ensures that the minimum difference must be between adjacent elements.
+2. Initializing 'min_diff' with infinity.
+3. Iterating through the sorted array to find the smallest difference between any two adjacent elements.
+4. Creating an empty list 'result' to store the pairs.
+5. Iterating through the sorted array a second time.
+6. Checking if the difference between current adjacent elements equals 'min_diff'.
+7. If it does, appending the pair [nums[i-1], nums[i]] to the 'result' list.
+8. Returning the list of all pairs found.
+
+Why this logic is used:
+Sorting the array first (O(n log n)) is the key optimization. In a sorted array, the elements closest in value are guaranteed to be neighbors. This allows us to find the minimum difference in a single linear pass (O(n)) through the sorted list, rather than comparing every possible pair (O(n²)). The total time complexity is O(n log n) due to the sorting step.
