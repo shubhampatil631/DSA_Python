@@ -8,7 +8,7 @@ def spiralMatrix(matrix):
         if matrix:
             ret+=(matrix.pop()[::-1])
         if matrix and matrix[0]:
-            for row in matrix[::-1]:
+            for row in matrix:
                 ret.append(row.pop(0))
     return ret
 if __name__ == "__main__":

@@ -1,0 +1,13 @@
+Single Number Problem
+
+This code finds the single number in an array where every other element appears exactly three times.
+
+The code works by:
+1. Initializing two variables, `ones` and `twos`, to 0. `ones` keeps track of the bits that have appeared exactly once, and `twos` keeps track of the bits that have appeared exactly twice.
+2. Iterating through each number `i` in the array `nums`.
+3. Updating `ones` by XORing it with the current number `i` and then performing a bitwise AND with the bitwise NOT of `twos`. This ensures that bits appearing for the third time are removed from `ones`.
+4. Updating `twos` by XORing it with the current number `i` and then performing a bitwise AND with the bitwise NOT of `ones`. This ensures that bits appearing for the third time are removed from `twos`.
+5. Finally, `ones` will hold the number that appeared exactly once.
+
+Why this logic is used:
+This approach is highly efficient as it uses bitwise operations to solve the problem in O(n) time complexity and O(1) space complexity. By keeping track of the bits that appear once and twice, it can easily reset the bits that appear three times (since `x ^ x ^ x = x`, but the logic specifically removes the third occurrence by masking `ones` and `twos`).

@@ -1,0 +1,16 @@
+Subsets Problem
+
+This code generates all possible subsets (the power set) of a given array of unique integers.
+
+The code works by:
+1. Defining an inner helper function `backtrack(start, path)` that recursively builds subsets.
+2. `start` represents the current index we are considering in the `nums` array, and `path` holds the subset currently being built.
+3. Every time `backtrack` is called, it adds a copy of the current `path` (`path[:]`) to the results list `res`.
+4. It then iterates from the `start` index to the end of the `nums` array.
+5. In each iteration, it appends the current number `nums[i]` to `path`.
+6. It makes a recursive call to `backtrack(i + 1, path)` to explore further numbers that can be added to the current subset.
+7. After the recursive call returns, it pops the last added number from `path` (`path.pop()`) to backtrack and explore other possibilities (combinations).
+8. The process starts by initializing an empty result list `res` and calling `backtrack(0, [])`.
+
+Why this logic is used:
+Backtracking is ideal for generating all combinations or subsets. By appending an element, exploring recursively, and then removing it, the algorithm thoroughly traverses the "state space tree" of choices. It prevents generating duplicates and cleanly visits all 2^N possible subsets.

@@ -5,9 +5,8 @@ def threeSum(nums: List[int], target: int) -> List[List[int]]:
     result = []
 
     for i in range(len(nums)):
-        if i > 0 and nums[i] == nums[i - 1]:      # Skip duplicate elements
+        if i > 0 and nums[i] == nums[i - 1]:      # ensures that if the current number is the same as the previous one, it's skipped to prevent redundant calculations.
             continue
-
         low = i + 1
         high = len(nums) - 1
 

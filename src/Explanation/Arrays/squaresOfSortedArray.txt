@@ -1,0 +1,15 @@
+Squares of a Sorted Array Problem
+
+This code returns an array of the squares of each number from a sorted array, sorted in non-decreasing order.
+
+The code works by:
+1. Creating an empty double-ended queue (deque) called `ans` using `collections.deque()`.
+2. Initializing two pointers: `l` pointing to the start (index 0) and `r` pointing to the end (index `len(A) - 1`) of the array.
+3. Using a while loop to iterate as long as `l <= r`.
+4. Calculating the absolute values of the elements at the `l` and `r` pointers (`left` and `right`).
+5. Comparing the absolute values. If `left > right`, it means the square of the left element is larger. It squares the left element, appends it to the front of the deque (`ans.appendleft()`), and increments the left pointer `l`.
+6. Otherwise, the square of the right element is larger or equal. It squares the right element, appends it to the front of the deque, and decrements the right pointer `r`.
+7. Once the loop is complete, it returns the deque containing the sorted squares.
+
+Why this logic is used:
+Since the input array is already sorted but may contain negative numbers, the largest squares will always be at either the beginning (most negative) or the end (most positive) of the array. The two-pointer approach allows us to compare the ends, find the largest square, and place it at the end of our result (or in this case, push it to the front of a deque). This solves the problem efficiently in O(n) time and O(n) space.

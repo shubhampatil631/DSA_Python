@@ -1,0 +1,16 @@
+Letter Case Permutation Problem
+
+This code generates all possible strings that can be created by transforming every letter in a given string `s` individually to be lowercase or uppercase.
+
+The code works by:
+1. Initializing a list `op` with an empty string `[""]` to keep track of the permutations generated so far.
+2. Iterating through each character `c` in the input string `s`.
+3. Creating a temporary list `temp` for the current step.
+4. Checking if the character is an alphabet letter using `c.isalpha()`.
+5. If it is a letter, for every permutation `o` currently in `op`, it appends two new strings to `temp`: one with the lowercase version of `c` (`o + c.lower()`) and one with the uppercase version (`o + c.upper()`).
+6. If the character is not a letter (e.g., a number), for every permutation `o` in `op`, it simply appends the character `c` to it (`o + c`).
+7. Updating `op` to be the newly generated list of permutations `temp`.
+8. After iterating through all characters, returning `op`, which now contains all the permutations.
+
+Why this logic is used:
+This is an iterative approach to the backtracking/subset generation problem. By maintaining a list of partially built strings, we can branch out into two possibilities (lowercase and uppercase) whenever we encounter a letter, and simply carry over the character if it's a number. It guarantees that all valid permutations are systematically built.

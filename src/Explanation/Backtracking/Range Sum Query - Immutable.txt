@@ -1,0 +1,12 @@
+Range Sum Query - Immutable Problem
+
+This code calculates the sum of the elements of an array within a specific range [left, right] efficiently.
+
+The code works by:
+1. Creating a class `NumArray` initialized with an array of numbers `nums`.
+2. In the `__init__` method, it pre-computes an array called `acc_num` (prefix sums). It starts with a `[0]` to handle the edge case where `left` is 0 easily.
+3. It iterates through `nums`, continually adding the current number to the last accumulated sum in `acc_num`, thus keeping a running total up to each index.
+4. In the `sumRange(left, right)` method, it calculates the sum between indices `left` and `right` by subtracting the accumulated sum up to `left` from the accumulated sum up to `right + 1`.
+
+Why this logic is used:
+Calculating the sum of a range in a typical array would take O(n) time for every query. By taking O(n) time upfront in the constructor to calculate the prefix sums, any subsequent `sumRange` query can be answered in O(1) constant time. This is optimal when you need to run many range sum queries on an array that doesn't change (immutable).
