@@ -1,0 +1,19 @@
+Problem: Reverse Linked List
+
+Approach: Iterative In-Place Reversal
+We need to reverse the direction of all the 'next' pointers in the linked list. 
+We use three pointers:
+1. `prev` - keeps track of the previous node. It starts as None (since the new tail will point to None).
+2. `curr` - keeps track of the current node we are processing. It starts at the head.
+3. `next_p` - temporarily stores the next node so we don't lose the rest of the list when we break the link.
+
+For each node:
+- Save the next node: `next_p = curr.next`
+- Reverse the pointer: `curr.next = prev`
+- Move `prev` forward to the current node: `prev = curr`
+- Move `curr` forward to the saved next node: `curr = next_p`
+
+After the loop, `curr` becomes None, and `prev` points to the new head of the reversed list. We return `prev`.
+
+Time Complexity: O(N), where N is the number of nodes in the linked list. We traverse the list exactly once.
+Space Complexity: O(1), as we are modifying the list in-place using only pointers.

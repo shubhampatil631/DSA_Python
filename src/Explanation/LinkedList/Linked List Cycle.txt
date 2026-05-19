@@ -1,0 +1,10 @@
+Problem: Linked List Cycle
+
+Approach: Floyd's Tortoise and Hare (Fast and Slow Pointers)
+We use two pointers, `slow` and `fast`. Both start at the head of the linked list. 
+The `slow` pointer moves one step at a time, while the `fast` pointer moves two steps at a time.
+If there is a cycle in the linked list, the `fast` pointer will eventually catch up to the `slow` pointer from behind. If they meet (i.e., `slow == fast`), it means there is a cycle and we return True.
+If the `fast` pointer reaches the end of the list (`fast` or `fast.next` is None), it means there is no cycle and we return False.
+
+Time Complexity: O(N), where N is the number of nodes in the linked list.
+Space Complexity: O(1), as we only use two pointers.

@@ -1,0 +1,10 @@
+Problem: Middle of the Linked List
+
+Approach: Fast and Slow Pointers
+We use two pointers, `slow` and `fast`, both starting at the head of the linked list.
+The `slow` pointer moves one step at a time, while the `fast` pointer moves two steps at a time.
+Because the `fast` pointer travels twice as fast as the `slow` pointer, when the `fast` pointer reaches the end of the list (or the last node), the `slow` pointer will be exactly at the middle of the list.
+Finally, we return the node at the `slow` pointer.
+
+Time Complexity: O(N), where N is the number of nodes in the linked list. We only traverse the list once.
+Space Complexity: O(1), as we only use two pointers regardless of the list size.

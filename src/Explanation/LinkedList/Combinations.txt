@@ -1,0 +1,15 @@
+Problem: Combinations (Given two integers n and k, return all possible combinations of k numbers chosen from the range [1, n].)
+
+Approach: Backtracking
+We use a backtracking function to explore all possible combinations.
+1. The `backtrack` function takes two parameters:
+   - `start`: The current number we are considering (to avoid permutations, we only pick numbers greater than or equal to `start`).
+   - `path`: The current combination of numbers we have built so far.
+2. Base Case: If the length of `path` reaches `k`, we have found a valid combination. We append a copy of `path` (using `path[:]`) to our results list `res` and return.
+3. Recursive Step: We iterate from `start` up to `n`. For each number `i`:
+   - We add `i` to our current `path` (`path.append(i)`).
+   - We recursively call `backtrack` with `i + 1` as the new `start` (since we cannot reuse numbers, and we want combinations, not permutations).
+   - After exploring that branch, we backtrack by removing `i` from `path` (`path.pop()`) so we can try the next number.
+
+Time Complexity: O(k * C(n, k)), where C(n, k) is the number of combinations (n choose k). We generate all valid combinations and for each, we do a copy operation of length k.
+Space Complexity: O(k) for the recursion stack and the current `path` array (excluding the space used for the output list `res`).
